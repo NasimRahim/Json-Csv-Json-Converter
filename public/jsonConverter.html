@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"> <!--DARK MODE (<html lang="en"> mode cerah )   // darkmode   <html lang="en" data-bs-theme="dark">  -->
+<head>
+    <!--basic-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--mobile metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--site metas-->
+    <meta name="keywords" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="shortcut icon" href="images\favicon.png" type="">
+
+    <!--title website-->
+    <title>CSV to JSON Converter</title>
+    <!--source node.js untuk functions semua-->
+    <script src="scriptHTML.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> <!-- untuk csv parse ke dalam html-->
+    
+    <!-- bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!--css file manual overite dari folder css-->
+    <link rel="stylesheet" type="text/css"  href="css\bootstrap.css">
+
+    <!--Font punya file-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+  
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+
+<body class="sub_page">
+
+    <div class="hero_area">
+
+        <div class="hero_bg_box">
+            <div class="bg_image_box">
+                <img src="public\images\hero-bg.png" alt="">
+            </div>
+        </div>
+        <!--header section start here-->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light custom_nav-container">
+                    <a href="index.html" class="navbar-brand">
+                        <span>
+                            MIMOS BERHAD
+                        </span>
+                    </a>
+        
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!-- NAVIGATION BAR-->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="template.html" class="nav-link">CSV Converter<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="jsonConverter.html" class="nav-link">Json Converter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Documentation.html" class="nav-link">Documentation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="database.html" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i>Database</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <!--end header section-->
+    </div>
+
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Json <span> Converter</span>
+                </h2>
+                <p>
+                    Drop your CSV file and the json file will be upload as <span class="highlight">"Update.json"</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="images/mimos.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+            <!--start here-->
+                        <!-- <Page csvtojson" /> -->
+            <div class="container">  
+                <div class="card p-5 shadow p-3 mb-5 bg-body-tertiary rounded mx-auto my-3">
+                    <h1 class="text mx-auto" style="color: #00bbf0;">JSON CONVERTER</h1>
+                    <div class="text-nowrap bg-body-secondary border mx-auto" style="width: 8rem;">
+                            Drop your csv here
+                        </div>
+                    <!-- <button key in file" /> -->
+                    <div class="input-group m-3">
+                        <input type="file" class="form-control" id="csvFileInput" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <button class="btn btn-outline-secondary" type="button" id="csvFileInput"></button>
+                    </div>
+                    <!-- <button untuk download /> -->
+                    <button class="btn  mx-auto" onclick="convertCSVToJSON()" style="background-color: #00bbf0;; color: black;">Download File</button>
+                    <pre id="jsonOutput"></pre>
+                    <button class="btn mx-auto" onclick="convertDisplay()" style="background-color: #00bbf0;; color: black;">Display Output</button>
+                    <pre id="jsonDisplay"></pre>
+                </div>
+            </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Mimos Berhad</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section --> 
+
+
+
+</body>
